@@ -1,0 +1,237 @@
+.equip-inv{
+    display: flex;
+    padding: 5px;
+    height: 100%;
+}
+.equip-inv-table{
+    height: 98%;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    color: #333;
+}
+
+.equip-inv-summary{
+    position: relative;
+    background-color: #fff;
+    width: 45%;
+    margin: 5px;
+    border-radius: 5px;
+    height: 97%;
+    overflow-y: auto;
+
+    box-shadow: 0px 0px 3px 3px #33333333;   
+
+     
+}
+.equip-inv-summary button{
+    background-color: #00BF63;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 3px;
+    position: relative;
+    left: 93.5%;
+
+}
+.equip-inv-summary button p{
+    margin: 0;
+}
+
+.equip-inv-graph{
+    background-color: #fff;
+    width: 54%;
+    margin: 5px;  
+    border-radius: 3px;
+    height: 100%;
+}
+.equip-inv-graph h3{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.inv-category{
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.category{
+    box-shadow: 0px 0px 1px;
+    display: flex;
+    justify-content: space-between;
+    padding: 7.5px;
+}
+.category p{
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.categorical-items ul{
+    padding: 10px;
+    margin: 0px;
+}
+.categorical-list-head{
+    font-weight: 600;
+}
+.categorical-items li{
+    display: flex;
+    /* justify-content: space-between; */
+    width: 100%;
+    padding: 5px;
+}
+.categorical-items li p:first-child{
+    width: 35%;
+    text-align: left;
+}
+.categorical-items li p{
+    width: 45%;
+   font-size: 13px;
+   margin: 0px;
+}
+.categorical-items li p:last-child{
+    width: 25%;
+    text-align: center;
+}
+.categorical-items {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, transform 0.3s ease-out;
+  }
+  
+  .categorical-items-enter {
+    max-height: 500px; /* Adjust the max height as needed */
+    transform: translateY(0);
+    width: 100%;
+  }
+
+.category-content{
+    display: flex;
+    flex-direction: row;
+}
+.categorical-graph{
+    width: 50%;
+
+}
+
+.inv-summary p{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin: 7.5px;
+    
+}
+
+.inv-summary-header{
+    display: flex;
+}
+.inv-summary-head{
+    box-shadow: 0px 0px 1px;
+    padding: 5px;
+    padding-bottom: 10px;
+    
+}
+.inv-summary-head h3{
+    margin: 0px;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+.inv-summary-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.transaction-history{
+    width: 100%;
+    height: 97%;
+    overflow-y: auto;
+ 
+}
+
+.transaction-history .reservation-summary{
+    display: flex;
+    flex-direction: column; 
+    border: 1px solid #33333333;
+    margin-bottom: 10px;
+}
+
+.transaction-history .reservation-summary .reservation-summary-label{
+    display: flex;
+    justify-content: space-between ;
+    height: min-content;
+    padding: 10px;
+}
+
+.transaction-history .reservation-summary .reservation-summary-label h1{
+    font-size: 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.transaction-history .reservation-summary .reservation-summary-label .summary-periods{
+    position: relative;
+    /* left: 5%; */
+    width: 27%;
+}
+
+.transaction-history .reservation-summary .reservation-summary-label label{
+    left: 5%;
+    font-size: .85rem;
+    font-weight: 500;
+    margin: 5px;
+}
+.transaction-history .reservation-summary .reservation-summary-label label select{
+    width: 120px;
+    border: 1px solid #33333349;
+    outline-color: #00BF63;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.transaction-history .operations-summary{
+    height: 50%;
+    border: 1px solid #33333333;
+}
+
+.operations-summary .operations-summary-label{
+    display: flex;
+    justify-content:  center;
+    padding: 10px;
+}
+.operations-summary .operations-summary-label h1{
+    font-size: 1rem;
+
+}
+.print-options{
+
+    position: relative;
+    cursor: pointer;
+}
+.print-options button{
+    width: 30px;
+}
+@media print {
+    .reservation-summary{
+        padding: 40px;
+    }
+    .reservation-summary-label{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+    .reservation-summary-label h1{
+        font-size: 1rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .reservation-summary-label .print-options{
+        display: none;
+    }
+  }

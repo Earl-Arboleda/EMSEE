@@ -1,0 +1,56 @@
+.head-wrapper{
+
+}
+
+
+
+.InvList{
+  display: flex;
+  height: min-content;
+  width: 100%;
+  justify-content: space-between;
+  /* font-weight: 00; */
+}
+
+.InvList.inv-header{
+  position: sticky;
+  font-weight: 600;
+  font-size: 14px;
+  top: 0;
+  background-color: #fff;
+  z-index: 3;
+  border-bottom: 2px solid #00cc00;
+  padding: 0px;
+}
+
+.InvList div{
+  width: 13%;
+  position: relative;
+  padding: 1% 1%;
+
+}
+
+.invlist-body{ 
+  cursor: pointer;
+  border: 1px solid #fff;
+  height: 50px;
+}
+
+
+.invlist-body div:last-child{
+  padding: .5%;
+}
+
+.invlist-body img{
+  height: 100%;
+}
+
+.InvList input{
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.InvList label{
+  padding: 1% 1%;
+}

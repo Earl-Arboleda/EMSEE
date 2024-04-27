@@ -1,0 +1,114 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: min-content;
+  /* border: 1px solid #00BF63; */
+  overflow-y: auto;
+  position: relative;
+  z-index: 1; /* Ensure it's above other content */
+}
+
+.wrapper .row {
+  margin: 5px;
+  width: 13.5%;
+  min-width: 120px;
+  background-color: #c2e0ff00;
+  padding: 0px;
+  height: 10%;
+  min-height: 200px;
+  position: relative; /* Add position relative for absolute positioning */
+}
+
+.card {
+  background-color: white;
+  /* min-width: 340px; */
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Adjust to column layout */
+  justify-content: space-between;
+  align-items: center;
+  border: .5px solid #33333341;
+  border-radius: 5px;
+  padding: 10px 0px;
+  transition: background-color 0.03s ease-in-out;
+}
+.card.selected{
+  background-color: #80ff80;
+  color: #fff;
+  font-weight: normal;
+}
+
+.card.selected .btns button{
+  background-color: #fff;
+  color: #00cc00;
+  font-weight: 500;
+}
+
+
+.card-detail {
+  display: flex;
+  flex-direction: column; /* Adjust to column layout */
+  align-items: center;
+  width: inherit;
+}
+
+.card img {
+  height: 70px;
+  width: 70px;
+  border-radius: 3px;
+}
+
+.card .details {
+  text-align: center; /* Center text */
+  width: 100%;
+  /* background-color: #fff; */
+  padding: 1%;
+}
+
+.details p:first-child {
+  font-weight: bold;
+  /* background-color: #fff; */
+}
+
+.details p {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0px;
+  width: 100%; /* Adjust to full width */
+}
+
+.card .btns {
+  /* background-color: #fff; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* Adjust to distribute buttons */
+}
+
+.row .card .btns button p {
+  margin: 0px;
+}
+
+.card .btns button {
+  background-color: #00cc00;
+  margin: 3px;
+  padding: 5px;
+  width: 80px; /* Adjust to a fixed width */
+  font-size: 12px;
+  color: rgb(248, 248, 248);
+  border-radius: 4px;
+  transition: 0.1s ease;
+}
+
+.card .btns button:hover {
+  background-color: #00b300;
+  color: #fff;
+}
+
+.card-checkbox{
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+}
+
+.card-detail input{display: none;}

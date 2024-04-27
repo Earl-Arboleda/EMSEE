@@ -1,0 +1,356 @@
+/* Global styles */
+.header {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 13px;
+    height: inherit;
+    width: 70px;
+    z-index: 1;
+    position: relative;
+    padding: .5%;
+    transition: width .5s ease;
+    background-color: #fff;
+}
+
+.header:hover{
+  width: 240px;
+
+}
+
+.header:hover li button{
+  width: 200px;
+  overflow-x: hidden;
+}
+.header:hover li button p{
+  display: flex;
+  left: 10px;
+}
+.header:hover .Login p{
+  display: flex;
+
+}
+
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    height: 100%;
+    justify-content: space-between;
+    width: min-content;
+  }
+
+
+  .navbar-options {
+    width: 100%;
+    flex-grow: 1;
+  }
+  
+  .navbar-options ul {
+    list-style: none;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    justify-content: flex-start;
+
+  }
+  
+  .navbar-options li {
+    display: flex;
+  
+  }
+  
+  .navbar-options li button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    height: 53.6px;
+    width: 53.6px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: width  0.3s ease;
+  }
+
+
+  .navbar-options li button p{
+    position: relative;
+    display: none;
+    font-weight: 500;
+    margin: 0;
+    transition: opacity .3s ease;
+  }
+
+  .navbar-options li a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+
+
+  .nav-item {
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+
+  .navbar-brand{
+    display: none;
+  }
+  .user-info{
+    font-weight: bold;
+    width: 100%;
+  }
+  .navbar .Login {
+    height: min-content;
+    width: 100%;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: width 0.3s ease;
+  }
+  .navbar .Login p{
+    margin: 0;
+    display: none;
+    position: relative;
+    top: 0;
+    width: max-content;
+    transition: all .3s ease ;
+  }
+  .navbar .Login button {
+    width: inherit;
+    height: 53.6px;
+    font-weight: 500;
+    box-shadow: 0px 1px 1px 1px #33333348;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  .navbar .Login button:hover{
+    background-color: #f23513;
+    border-radius: 10px;
+
+  }
+  .navbar .Login button:hover {
+    color:#fff;
+  }
+  .nav-item.User{
+    display: none;
+  }
+  @media only screen and (max-width: 480px) {
+    .header {
+
+      width: min-content;
+      z-index: 5;
+      position: absolute;
+      left: -200px;
+      transition: left  .3s linear;
+      padding: 10px;
+      background-color: #fff;
+      border-right: 1px solid #00cc00;
+
+  }
+
+  .header.open{
+    left: 0;
+  }
+
+      .header:hover{
+        width: initial;
+  }
+
+  .header.open .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .navbar-brand{
+    margin: 0;
+    padding: 0px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    /* border: 1px #333 solid; */
+  }
+  .navbar-brand img{
+    height: 40px;
+    min-width: 145px;
+  }
+
+  .navbar{
+    padding: 0;
+  }
+  .header:hover li button p{
+    left: 0px;
+  }
+  .navbar-options{
+    padding: 10px 0px;
+  }
+
+
+  .navbar-options li button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    height: 53.6px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .header:hover .navbar-options li button {
+    width: 100%;
+  }
+
+  .header .navbar-options li,
+  .header .navbar-options li a{
+    width: 100%;
+  }
+
+  .navbar-options li button p{
+    position: relative;
+    display: flex;
+    font-weight: 500;
+  }
+  .navbar-brand{
+    display: flex;
+  }
+  .navbar .Login p{
+    display: none;
+    opacity: 1;
+  }
+  .header:hover .Login p{
+    transform: translateX(0%);
+  }
+
+  .nav-item.Inventory,
+  .nav-item.Reservation,
+  .nav-item.Report,
+  .nav-item.Settings{
+    display: none;
+  }
+
+  .nav-item.User{
+    display: flex;
+  }
+  .nav-item button{
+    gap: 5px;
+  }
+ 
+
+  }
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    .header {
+      width: min-content;
+      z-index: 5;
+      position: absolute;
+      left: -200px;
+      transition: left 0.3s linear;
+      padding: 20px;
+      background-color: #fff;
+      border-right: 1px solid #00cc00;
+      height: 100%;
+    }
+  
+    .header.open {
+      left: 0;
+    }
+  
+    .header:hover {
+      width: initial;
+    }
+  
+    .header.open .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: space-between;
+      width: 100%;
+    }
+     .nav-logo.user{
+      display: none;
+    }
+    .navbar-brand {
+      margin: 0;
+      padding: 0px;
+      height: 40px;
+      width: 100%;
+      display: flex;
+    }
+  
+    .navbar-brand img {
+      height: 40px;
+      min-width: 145px;
+    }
+  
+    .navbar {
+      padding: 0;
+    }
+  
+    .header:hover li button p {
+      left: 0px;
+    }
+  
+    .navbar-options {
+      padding: 10px 0px;
+    }
+  
+    .navbar-options li button {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 53.6px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  
+    .header:hover .navbar-options li button {
+      width: 100%;
+    }
+  
+    .header .navbar-options li,
+    .header .navbar-options li a {
+      width: 100%;
+    }
+  
+    .navbar-options li button p {
+      position: relative;
+      display: flex;
+      font-weight: 500;
+    }
+  
+    .navbar-brand {
+      display: flex;
+    }
+  
+    .navbar .Login p {
+      display: none;
+      left: 20%;
+      opacity: 1;
+    }
+  
+    .header:hover .Login p {
+      transform: translateX(0%);
+    }
+    .userName{
+      display: none;
+    }
+  }
+  
+    

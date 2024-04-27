@@ -1,0 +1,221 @@
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10; 
+    font-size: 13px;
+
+  }
+  
+  .popup.open{
+    display: flex;
+  }
+  
+
+
+  .popup-content{
+    position: relative;
+    height: 350px;
+    width: 45%;
+    background-color: #fff;
+    padding: 1% 1%;
+    border-radius: 10px;
+    min-width: 350px
+  }
+
+  .inventory-popup-label{
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .inventory-popup-label h3{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .inventory-popup-label span{
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+  .popup-content form{
+    position: relative;
+
+  } 
+   .popup-content form .parent-container{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .popup-content form .parent-container .child-container{
+    width: 33%;
+    position: relative;
+
+  }
+  .popup-content form .parent-container .child-container .image{
+    
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .popup-content form .parent-container .child-container img{
+    height: 150px;
+    width: 150px;
+    align-self: center;
+  }
+
+  .popup-content form label{
+    display: flex;
+    flex-direction: column;
+    padding: 7%;
+    font-weight: 500;
+  }
+
+  .popup-content form input{
+    width: 100%;
+    border: 1px solid #33333333;
+    padding: 4px;
+    border-radius: 3px;
+    outline-color: #00cc00;
+    background-color: #c2c2c285;
+  }
+  .popup-content form input:focus{
+    background-color: #fff;
+  }
+  .popup-content form select{
+    width: 100%;
+    border: 1px solid #33333333;
+    padding: 5.4px;
+    outline-color: #00cc00;
+    border-radius:  3px;
+    background-color: #c2c2c285;
+  }
+  .popup-content form select:focus{
+    background-color: #fff;
+  }
+  .popup-content .form-buttons{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    justify-content: space-around;
+    gap: 30%;
+  }
+  .popup-content .form-buttons button{
+    background-color: #00cc00;
+    color: #fff;
+    padding: 5px;
+    width: 60px;
+    border-radius: 3px;
+}
+.popup-content .form-buttons button:hover{
+  background-color: #00b300;
+}
+
+
+
+  .popup-content .form-buttons  .cancel{
+
+  }
+
+
+  /* DELETE CSS */
+.delete-content{
+  background-color: #fff;
+  height: 50%;
+  width: 30%;
+  padding: 1%;
+  border-radius: 10px;
+  position: relative;
+
+}
+
+.delete-head{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.delete-head h3{
+  font-size: 1rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.delete-head span{
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.delete-body{
+  display:flex;
+  justify-content: space-between;
+  position: relative;
+  height: 96%;
+}
+
+.delete-body .deleting-item{
+  padding: 1%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  
+}
+
+.delete-body .deleting-item .delete-button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.delete-body .deleting-item button{
+  background-color: #00cc00;
+  color: #fff;
+  border-radius: 3px;
+  width: min-content;
+  padding: 7.3px;
+  min-width: 60px;
+}
+.delete-body .deleting-item button:hover{
+  background-color: #00b300;
+}
+
+.delete-body .deleting-item .delete-wrapper{
+  overflow-y: auto;
+  height: 80%;
+  position: relative;
+  border-bottom: 1px solid #33333333;
+}
+
+
+
+.delete-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  border-bottom: 1px solid #33333333;
+}
+
+.delete-item p{
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.delete-item-container{
+  height: 90%;
+  font-size: 13px;
+
+}

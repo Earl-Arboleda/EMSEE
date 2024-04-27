@@ -1,0 +1,203 @@
+.req-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);    
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    ;
+    align-items: center;
+    z-index: 10;
+    font-size: 13px;
+  }
+  
+  .req-modal-container{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 550px;
+    width: 100%;
+    height: min-content;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .req-modal-label{
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  
+
+  .req-modal-container .req-modal-label p {
+    text-align: center;
+    font-weight: bolder;
+  }
+  .req-modal-container .req-modal-label span{
+    justify-self: end;
+    font-size: 20px;
+    right: 1%;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  .req-modal-container form table{
+    width: 50%;
+  }
+  .req-modal-container form table tr{
+    width: min-content;
+  }
+
+  .req-modal-container form table tr td{
+    width: min-content;
+  }
+
+  .req-modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .req-modal form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .req-modal label {
+    margin-bottom: 10px;
+  }
+  
+  .req-modal input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .req-modal button {
+    color: #333;
+    font-size: 13px;
+    font-weight: 100;
+    border-radius: 5px;
+  }
+  
+  .req-modal button:not(:last-child) {
+    margin-right: 10px;
+  }
+  
+  .req-modal button:hover {
+    background-color: #00b300;
+  }
+  
+  .req-modal button[type="submit"] {
+  }
+  
+  .req-button-holder{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    position: relative;
+  }
+  .req-button-holder button{
+    height: min-content;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 13px;
+    min-width: 60px;
+    border-radius: 3px;
+    background-color: #00cc00;
+    color: #fff;
+  }
+
+
+  .req-button-holder button p{
+    margin: 0px;
+  }
+
+  .reserve-list-item-container{
+    display: flex;
+}
+  .reserve-list-item-container table{
+    width: 50%;
+  }
+  .reserve-list-item-container table tr:hover{
+    background-color: #fff;
+  }
+  
+  .reserve-list-item-container table tbody{
+
+  }
+  .reserve-list-item-container table tbody tr p{
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    padding: 3% 0px;
+  }
+
+.reserve-item-selection {
+    width: 50%;
+    height: 278.2px;
+
+}
+.reserve-item-container{
+  overflow-y: scroll;
+  height: 270px;
+}
+
+.reserve-item-selection span{
+  text-align: center;
+  padding-bottom: 2%;
+  font-size: 14px;
+  font-weight: 600;
+  top:1%;
+  background-color: #fff;
+  padding: 2%;
+}
+
+.reserve-item-selection .request-select{
+    display: flex;
+    margin: 2% 1%;
+    font-size: 13px;
+    font-weight: 500;
+    
+}
+.reserve-item-selection select{
+  width: 100%;
+  border: 1px solid #33333333;
+  outline-color: #00cc00;
+  border-radius: 5px;
+}
+
+
+.reserve-item-selection .remove-button,
+.reserve-item-selection .add-button{
+   background-color: #00cc00;
+   color: #fff;
+   font-size: 13px;
+   font-weight: 500;
+   padding: 2%;
+    
+}
+.reserve-item-selection .add-button{
+  margin: 0px 40%;
+  border-radius: 3px;
+  min-width: 60px;
+
+}
+
+.reserve-item-selection .add-button p,
+.reserve-item-selection .request-select button p{
+    margin-bottom: 0px;
+}
+
+.reserve-item-selection .request-select button{
+    border-radius: 3px;
+}
+.req-button-holder .req-reject{
+  background-color: red;
+}
+.req-button-holder .req-reject:hover{
+  background-color: rgb(224, 4, 4);
+}

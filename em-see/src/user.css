@@ -1,0 +1,146 @@
+.profile-page{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.profile-page-label{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-page-label img{
+    height: 40px;
+}
+
+.profile-page-label h1{
+    font-size: 1.5rem;
+}
+
+.profile-info{
+    height: 90%;
+    position: relative;
+}
+
+.personal-info{
+    margin: 20px 0px ;
+}
+
+.profile-transaction{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    font-size: .85rem;
+    position: relative;
+}
+
+.transaction-reservation-button{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 600;
+}
+.transaction-reservation-button button{
+    padding: 7.3px;
+    border-bottom: 2px solid #fff;
+    width: 45%;
+}
+.transaction-wrapper{
+    height: 94%;
+    position: relative;
+}   
+
+.profile-transaction-history{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    height: 100%;
+}
+.personal-transaction{
+    display: flex;
+    justify-content: space-between;
+    height: min-content;
+}
+
+.personal-transaction.head{
+    border: 1px solid #33333333;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.personal-transaction.head div{
+    padding: 7.3px;
+    width: 27%;
+    text-align: start;
+
+}
+.personal-transaction.head div:last-child{
+    width: 19%;
+    text-align: center;
+
+}
+.personal-transaction-body-wrapper{
+    max-height: 86%;
+    overflow-y: auto;
+    padding: 0px 7.3px;
+    border-bottom: 1px solid #33333333;
+}
+.personal-transaction.body{
+    border-bottom: 1px solid #33333333;
+}
+.personal-transaction.body div{
+    width: 27%;
+}
+.personal-transaction.body div:last-child{
+    width: 19%;
+    text-align: center;
+}
+
+
+
+.request-summary{
+    height: 94%;
+}
+.request-summary .request-history-head{
+    display: flex;
+    padding: 7.3px;
+    border: 1px solid #33333333;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.request-summary .request-history-head div{
+    width: 26%;
+}
+.request-summary .request-history-head div:last-child{
+    width: 22%;
+    text-align: center;
+}
+.request-history-body-wrapper{
+    padding: 0px 7.3px ;
+    height: 94%;
+    overflow-y: auto;
+}
+.request-history-body{
+    display: flex;
+    border-bottom: 1px solid #33333333;
+}
+.request-history-body div{
+    width: 26%;
+}
+
+.request-history-body div:last-child{
+    text-align: center;
+    width: 22%;
+}
+
+@media screen and (max-width: 720px) {
+    .profile-transaction{
+        font-size: 10px;
+    }
+    .personal-transaction.body{
+        font-size: 10px;
+    } 
+
+    .request-history-body{
+        font-size: 10px;
+    }
+}

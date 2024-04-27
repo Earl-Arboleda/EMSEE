@@ -1,0 +1,61 @@
+.reservation-calendar{
+    width: 100%;
+    height: 108%;
+}
+
+.reservation-calendar-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+  
+.reservation-day{
+  height: 92%;
+  border: 1px solid #ccc;
+}
+  
+.reservation-calendar .reservation-calendar-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .reservation-calendar .reservation-calendar-header button {
+    background-color: #00cc00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 7.3px;
+    min-width: 60px;
+    cursor: pointer;
+  }
+  
+  .reservation-calendar button:hover {
+    background-color: #00b300;
+  }
+  
+  .reservation-calendar table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+  }
+  
+  .reservation-calendar table th,
+  .reservation-calendar table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    height: auto;
+  }
+  
+   .reservation-calendar th {
+    background-color: #f2f2f2;
+  }
+  
+   .reservation-calendar td {
+    cursor: pointer;
+  }
+  
+   .reservation-calendar td:hover {
+    background-color: #f0f0f0;
+  }
+  

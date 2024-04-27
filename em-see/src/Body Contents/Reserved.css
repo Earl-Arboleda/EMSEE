@@ -1,0 +1,207 @@
+
+  
+  .release{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+  .release.open{
+    display: flex;
+  }
+
+  .release-content{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    width: 40%;
+    height: 60%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    min-width: 350px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+      /* justify-content: space-between; */
+  }
+
+  .release-head{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-self:top;
+    margin-bottom: 10px;
+  }
+  .release-head h1{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .release-head span{
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .release-items{
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    position: relative;
+  }
+  .release-items-body-wrapper{
+    overflow-y: auto;
+    border: 1px solid #33333333;
+    height: 100%;
+  }
+
+  .release-content .reservation-info{
+    height: 85%;
+  }
+
+  .release-items .release-items-header{
+    display: flex;
+    width: 100%;
+  }
+  .release-items .release-items-header .release-items-head{
+    width: 100%;
+    border: 1px solid #33333333;
+    padding: 7.3px;
+    background-color: #00cc00;
+    color: #fff;
+  }
+
+  .release-items .release-items-body{
+    display: flex;
+  }
+  .release-items .release-items-body div{
+    width: 100%;
+    border: 1px solid #33333333;
+    padding: 7.3px;
+  }
+
+ 
+  .releasing-item-info{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  .releasing-item-info p{
+    font-size: 13px;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .releasing-item-info.head{
+    border-bottom: 1px solid #33333333;
+    
+  }
+  .releasing-item-info.head p{
+    margin: 0px 12%;
+    font-weight: bold;
+  }
+
+  .release-buttons{
+    display: flex;
+    justify-content:  space-around;
+    position: relative;
+    padding: 10px;
+    }
+
+  .release-buttons button{
+    padding: 7.3px;
+    min-width: 60px;
+    border-radius: 3px;
+    font-weight: 500;
+
+  }
+  .reserve-item-release{
+    background-color: #00cc00;
+    color: #fff;
+  }
+  .reserve-item-release:hover{
+    background-color: #00b300;
+  }
+
+  .reserve-item-delete{
+    background-color: red;
+    color: #fff;
+    left: 0;
+
+  }
+
+  .reserve-item-delete:hover{
+    background-color: rgb(224, 4, 4);
+    color: #fff;
+  }
+
+  .reserved-view{
+    height: 500px;
+    overflow-y: auto;
+  }
+  .reserved-view .outsidewrap{
+    height: 86%;
+  }
+
+  .reserved-view .grouped-reserve{
+
+  }
+  .reserved-view .group-container{
+    border: 1px solid #33333333;
+    border-radius: 5px ;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+  .reserved-view .group-container-status{
+    align-self: center;
+    
+  }
+
+  .reserved-view .group-container-status .status-color-Pending{
+    color: orange;
+  }
+  .reserved-view .group-container-status .status-color-Released{
+    color: blue;
+  }
+  .reserved-view .group-container-status .status-color-Completed{
+    color: #00cc00;
+  }
+  .reserved-view .group-container-status .status-color-Cancelled{
+    color: red;
+  }
+
+
+  
+  .reserved-view .group-container:hover{
+    border: 1px solid #00cc00;
+
+  }
+
+  .reserved-view .group-container h3{
+    font-size: 1rem;
+  }
+
+  .reserved-view .group-container ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+
+  .reserved-view .group-container ul li{
+    margin: 5px 10px;
+  }
+
+  .No-reservation{
+    font-size: 1rem;
+   text-align: center;
+  }

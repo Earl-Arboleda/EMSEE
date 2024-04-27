@@ -1,0 +1,138 @@
+.inventory{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  transition: .2s ease;
+  font-size: 13px;
+  border-radius: 10px;
+}
+.inv-label{
+  display: flex ;
+  justify-content: space-between;
+}
+.inv-label img{
+  height: 40px;
+}
+.inv-label h1{
+  font-size: 1.5rem;
+}
+
+.inv-contents{
+  height: 84%;
+  border-radius: 5px;
+}
+
+.invBody{
+  width: 100%;
+}
+
+.checkbox{
+  margin: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+.inventory-button{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  gap: 5px;
+  flex-grow: 1;
+}
+
+.inventory-button button{
+  height: min-content;
+  padding: 7.3px;
+  min-width: 60px;
+  background-color: #00cc00;
+  color: #fff;
+  border-radius: 5px;
+
+}
+
+.inventory-button button:hover{
+  background-color: #00b300;
+  color: #fff;  
+}
+.inventory-history-button{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.inventory-history-button .inventory-history{
+  height: min-content;
+  padding: 7.3px;
+  min-width: 60px;
+  background-color: #00cc00;
+  color: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+.inventory-history-button .inventory-history:hover{
+  background-color: #00b300;
+  color: #fff;  
+}
+
+.inventory-search{
+    width: 300px;
+    display: flex;
+    background-color: #fff;
+    padding: 10px 10px;
+    justify-content: center;
+    position: relative;
+}
+
+.inventory-search form{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.inventory-search form input{
+  width: 100%;
+  border: 1px solid #33333357;
+  color: #33333391;
+  border-radius: 30px;
+  outline-color: #00cc00;
+  height: max-content;
+  position: relative;
+  justify-self: center;
+  align-self: center;
+  padding: 7.3px;
+  padding-left: 15px;
+  background-color: #ffffff99;
+  z-index: 3;}
+
+  .inventory-search input:focus{
+    z-index: 1;
+    font-weight: 500;
+    color: #000;
+  }
+
+
+  .inventory-search button{
+
+    background-color: #ffffff00;
+    position: absolute;
+    border-radius: 30px;
+    height: 37px;
+    width: 37px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    right: .5%;
+    z-index: 2; 
+  }
+  
+  .inv-wrapper{
+    height: 90%;
+    overflow-y: auto;
+    border-bottom: 1px solid #33333333;
+
+  }

@@ -1,0 +1,171 @@
+.userManagement{
+    height: 95%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    font-size: .85rem;
+}
+
+.userManagement .user-label{
+    display: flex;
+    justify-content: space-between;
+}
+.userManagement .user-label img{
+    height: 40px;
+}
+.userManagement .user-label .touchScreen{
+    display: none;
+}
+
+.userManagement .user-label h1{
+    font-size: 1.5rem;
+    text-align: end;
+}
+.user-table{
+    height: 100%;
+}
+.user-table-body-header{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+    border-bottom: 2px solid #00cc00;
+}
+
+.user-table-body-header .head{
+    width: 23%;
+    padding: 10px;
+    border-bottom: 1px solid #33333333;
+    font-weight: 600;
+}
+
+.user-table-body{
+    height: 81.5%;
+    border-bottom: 1px solid #33333333;
+
+}
+.user-table-body-wrapper{
+    height: 100%;
+    display: flex ;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.user-table-body .user-entry{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    cursor: pointer;
+    border-bottom: 1px solid #33333333;
+
+}
+.user-table-body .user-entry input{
+
+}
+
+.user-table-body .user-entry .bode{
+    width: 23%;
+    padding: 10px;
+}
+
+.user-search{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.user-search form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+
+.user-search input{
+    width: 100%;
+    border: 1px solid #33333357;
+    color: #33333391;
+    border-radius: 30px;
+    outline-color: #00cc00;
+    height: max-content;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    padding: 7.3px;
+    padding-left: 15px;
+    background-color: #ffffff99;
+    z-index: 3;
+}
+
+.user-search input:focus{
+    z-index: 1;
+    font-weight: 500;
+    color: #000;
+}
+
+.user-search button{
+    background-color: #ffffff00;
+    position: absolute;
+    border-radius: 30px;
+    height: 37px;
+    width: 37px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    right: .5%;
+    z-index: 2; 
+}
+
+.register-delete-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-grow: 1;
+
+}
+
+.register-delete-div button{
+    background-color: #00cc00;
+    height: min-content;
+    min-width: 60px;
+    font-weight: 500;
+    padding: 7.3px;
+    color: #fff;
+    margin: 0px 5px;
+    border-radius: 3px;
+    justify-self: center;
+    align-self: center;
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 768px){
+    .userManagement .user-label .desktop{
+        display: none;
+    }
+    .userManagement .user-label .touchScreen{
+        display: flex;
+    }
+    .Sorting .search-sort-container .dropdowns{
+        display: none;
+    }
+
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 480px){
+    .Sorting .register-delete-div{
+        justify-content: space-evenly;
+    }
+    .Sorting .search-sort-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Sorting .search-sort-container .user-search{
+        width: 95%;
+    }
+}

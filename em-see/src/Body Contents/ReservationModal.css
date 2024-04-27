@@ -1,0 +1,260 @@
+/* Reservation Modal Styles */
+.reservation-modal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  
+}
+
+.reservation-modal.open {
+  display: flex; /* Show the modal when the 'open' class is present */
+}
+
+.reservation-modal-content {
+  background-color: #fff; /* White background color for the modal content */
+  padding: 10px;
+  border-radius: 8px;
+  width: 50%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  z-index: 11;
+}
+
+.reserve-container{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+}
+
+.reservation-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: #555; /* Dark gray color for the close button */
+  cursor: pointer;
+}
+
+.reservation-modal-content .reserve-container form {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2%;
+}
+
+.reservation-modal-content .reserve-container form label {
+  width: 100%;
+  height: min-content;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333; /* Dark color for labels */
+  min-width: 150px;
+  text-align: left;
+  padding: 5px;
+}
+.reserve-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+.reservation-modal-content .reserve-container form label select{
+  width: 100%;
+  padding: 6.5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .85rem;
+  outline-color: #00cc00;
+  background-color: #c2c2c285;
+  font-weight: 300;
+}
+
+.reservation-modal-content .reserve-container form label input {
+  width: 100%;
+  margin: 1%;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #33333333;
+  border-radius: 3px;
+  font-size: 13px;
+  outline-color: #00cc00;
+  font-weight: 400;
+  background-color: #c2c2c285;
+}
+.reservation-modal-content .reserve-container form label input .client-fields{
+  background-color: #fff;
+}
+
+.submit-btn-div button {
+  background-color: #00cc00; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  margin: 10px 0px;
+  width: min-content;
+}
+.submit-btn-div button:hover{
+  background-color: #00b300;
+}
+.submit-btn-div{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+  
+
+.item-field{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+.item-wrapper{
+  position: relative;
+  border: 1px solid #00cc00;
+  height: 75%;
+  overflow-y: auto;
+}
+
+.item-request{
+  font-size: .85rem;
+  margin: 1% 2%;
+  border: .5px solid #33333333;
+  display: flex;
+}
+
+.item-request select{
+  width: auto;
+  padding: 6px;
+  font-size: 13px;
+  outline-color: #00cc00;
+  background-color: #fff;
+}
+.label-group{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.item-request input{
+  width: 40px;
+  outline-color: #00cc00;
+  border: .5px solid #33333333;
+  padding: 5px;
+}
+.reserved-items{
+  height: inherit;
+  width: 33%;
+  padding: 0px 2%;
+
+}
+
+.reserved-items button{
+  background-color: #00cc00;  
+  color: #fff;
+  padding: 7.3px;
+  font-weight: 500;
+  border-radius: 3px;
+  min-width: 60px;
+}
+.reserved-items .reserved-items-buttons{
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.reserved-items .remove{
+  background-color: #fff;
+  color: #00cf00;
+}
+
+
+.reservation-modal-content .reservation-modal-label h3{
+  margin: 0px;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+.reservation-modal-label{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.reservation-modal-label span{
+  position: absolute;
+  right: 1%;  
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+  .reservation-modal-content {
+    width: 70%; 
+    min-width:500px;
+    height: auto;
+  }
+  .reserve-container {
+    height: 470px;
+  }
+  .reservation-modal-content .reserve-container form {
+    width: 100%;
+  }
+  .label-group {
+    width: 100%;
+    display: flex;
+  }
+  .reserve-wrapper {
+    flex-direction: column;
+    height: 100%;
+  }
+  .reserved-items {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .reservation-modal-content{
+    width: 98%; 
+    min-width: 0;
+    height: auto;
+  }
+  .reserve-container{
+    /* overflow-y: ; */
+    height: 470px;
+    width: 100%;
+  }
+
+  .reservation-modal-content .reserve-container form{
+    width: 100%;
+  }
+  .label-group{
+    width: 100%;
+    display: flex;
+  }
+  .reserve-wrapper{
+    flex-direction: column;
+    height: 100%;
+  }
+  .reserved-items{
+    /* height: 500px; */
+    width: 100%;
+  }
+
+  .item-wrapper{
+    height: 70%;
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,104 @@
+.report{
+    position: relative;
+    height: 93%;
+    width: 100%;
+    background-color: #fff;
+    transition: .2s ease;
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+.report .report-label{
+    display: flex;
+    justify-content: space-between;
+}
+
+.report .report-label img{
+    height: 40px;
+}
+
+.report .report-label h1{
+    font-size: 1.5rem;
+}
+
+.report-table{
+    width: 100%;
+    /* border: 1px solid #333; */
+
+}
+
+.report-button-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px;
+}
+
+
+
+.report-button-container a{
+    width:  40%;
+    transform: all 0.3s ease;
+}
+
+.report-button-container a button {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: #333; 
+    position: relative;
+    padding: 12px;
+    transition: all 0.1s ease-in-out;
+    border-bottom: 5px solid #fff;
+
+    /* border: 1px solid #333; */
+    }
+
+    .report-button-container a button {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        color: #333; 
+        position: relative;
+        padding: 12px;
+        transition: all 0.1s ease-in-out;
+        }
+
+    .report-button-container a  button p{
+        font-size: 1rem;
+        font-weight: 500;
+        width: 100%;
+        transition: all 0.3s ease;
+        margin: 0;
+    }
+    
+    .report-button-container a  .active {
+      width: 100%;
+      box-sizing: border-box;
+      border-bottom: 5px solid #00cc00;
+        }
+
+    .report-button-container a  .active p{
+        font-weight: 600;
+        /* color: #00BF63; */
+        border-bottom: none;
+        /* font-size: 16px; */
+    }
+    
+    .report-table{
+        height: 88%;
+        /* border: 1px solid #333; */
+    }
+    
+    .report-table-view{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+    .weekly-total{
+        border: 1px solid #3333333c;
+        padding: 10px;
+    }
+    .weekly-total h3{
+        text-align: center;
+    }
+    

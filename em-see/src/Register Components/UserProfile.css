@@ -1,0 +1,94 @@
+ .user-profile{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10; 
+}
+.user-profile.open{
+    display: flex;
+}
+
+.user-profile-content{
+    background-color: #fff;
+    width: 60%;
+    height: 90%;
+    position: relative;
+    border-radius: 10px;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+}
+.user-profile-content .user-profile-label{
+    display: flex;
+    justify-content: center;
+}
+.user-profile-content .user-profile-label h1{
+    font-size: 1rem;
+}
+.user-profile-content .user-profile-label span{
+    position: absolute;
+    right: 2%;
+    font-size: 20px;
+    cursor: pointer;
+}
+.user-profile-content .user-information{
+    border: 1px #33333333 solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+.user-profile-content .user-information h3{
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+.user-profile-content .user-information p{
+    margin: 0;
+}
+.user-transaction{
+    display: flex;
+    justify-content: space-between;
+    height: min-content;
+}
+.user-transaction div{
+    width: 25%;
+    text-align: center;
+    height: min-content;
+    padding: 7.3px;
+}
+
+.user-transaction .head{
+    font-weight: 600;
+    border-bottom: 1px solid #33333333;
+    display: flex;
+}
+
+.user-transaction-body-wrapper{
+    height: 430px;
+    overflow-y: auto;
+}
+
+.user-transaction-history{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #33333333;
+    border-radius: 5px;
+}
+.user-transaction-history-label {
+    display: flex;
+    justify-content: center;
+    font-size: 600;
+}
+
+.user-transaction-history-label h1{
+    font-size: 1rem;
+}
+@media only screen and (min-width: 300px) and (max-width: 768px){
+    .user-profile .user-profile-content{
+        width: 90%;
+    }
+}
