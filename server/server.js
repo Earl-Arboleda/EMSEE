@@ -326,7 +326,21 @@ app.get('/Api/RequestCount', (req, res) => {
 });
 
 
-
+app.get('/Api/ReservedCount', (req, res) => {
+  const count = {};
+  db.query('SELECT eventDate FROM reservations', (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      rows.forEach(row => {
+        const eventDate = new Date(row.eventDate).toLocaleDateString();
+        // Increment count for the eventDate or initialize to 1 if it doesn't exist
+        count[eventDate] = (count[eventDate] || 0) + 1;
+      });
+      res.json(count);
+    }
+  });
+});
 
 // POST API
 app.post('/Api/submitReservation', (req, res) => {

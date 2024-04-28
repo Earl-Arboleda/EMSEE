@@ -57,7 +57,6 @@ const Reserved = ({user, emcState}) => {
         ...reservationData,
       });
     });
-  
     const groupedArray = Object.entries(groupedData).map(([key, value]) => ({
       eventGroup: key,
       reservations: value,
@@ -67,7 +66,7 @@ const Reserved = ({user, emcState}) => {
     return groupedArray;
   };
 
-  
+  console.log(selectedDate)
   const openReleaseModal = (group) => {
     setSelectedItems(group)
     setReleaseOpen(!releaseOpen)

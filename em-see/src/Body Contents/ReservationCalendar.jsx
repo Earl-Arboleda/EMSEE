@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ReservationCalendar.css';
-
+import { toast } from 'react-toastify';
 function Calendar({ children, clickedDate, exitClicked }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [isClicked, setClick] = useState(false);
   const [selectedDay, setSelectedDay] = useState();
+  const [countData, setCountData] = useState();
   const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const currentDay = new Date().toLocaleDateString();
+  useEffect(() => {
+    fetch(`/Api/ReservedCount`)
+    .then(res => res.json())
+    .then(data => setCountData(data))
+    .catch(error => toast.error(error))
+  },[])
 
+  console.log(countData)
   const monthNames = [
     'January',
     'February',
@@ -42,7 +51,8 @@ function Calendar({ children, clickedDate, exitClicked }) {
         if (i === 0 && j < firstDayOfMonth) {
           week.push('');
         } else if (day <= totalDays) {
-          week.push(day);
+          const currentDate = new Date(year, month, day);
+          week.push(currentDate.toLocaleDateString());
           day++;
         } else {
           week.push('');
@@ -53,6 +63,8 @@ function Calendar({ children, clickedDate, exitClicked }) {
 
     return data;
   };
+
+
 
   const handlePrevMonth = () => {
     const prevMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth() - 1);
@@ -65,8 +77,8 @@ function Calendar({ children, clickedDate, exitClicked }) {
   };
 
   const handleSelectDate = (day) => {
-    const newSelectedDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), day);
-    clickedDate(newSelectedDate.toLocaleDateString());
+    console.log("NEW SELECTED DATE", day)
+    clickedDate(new Date(day).toLocaleDateString());
     setClick(!isClicked);
   };
 
@@ -105,7 +117,8 @@ function Calendar({ children, clickedDate, exitClicked }) {
                 {getMonthData().map((week, index) => (
                   <tr key={index}>
                     {week.map((day, index) => (
-                      <td onClick={() => handleSelectDate(day)} key={index}>{day}</td>
+                      <td onClick={() => handleSelectDate(day)} style={{border: currentDay === day ? '2px solid #00cc00': '', color: currentDay === day ? '#00cc00':''}} key={index}>{day ? new Date(day).getDate() : ''} <br/>   {countData?.[day] ? <>{countData[day]} Requests</> : null}
+                      </td>
                     ))}
                   </tr>
                 ))}

@@ -41,6 +41,7 @@
   
   .reservation-calendar table th,
   .reservation-calendar table td {
+    width: 14.28%;
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
@@ -51,8 +52,10 @@
     background-color: #f2f2f2;
   }
   
-   .reservation-calendar td {
+   .reservation-calendar table td {
     cursor: pointer;
+    height: 16.67%;
+
   }
   
    .reservation-calendar td:hover {
