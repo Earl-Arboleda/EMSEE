@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./BorrowModal.css";
 import { toast } from 'react-toastify';
 
-const BorrowModal = ({ user, isOpen, onClose, borrowList, onSubmit, setUpdate }) => {
+const BorrowModal = ({ user, isOpen, onClose, borrowList, setUpdate }) => {
   const [inchargeName, setInchargeName] = useState(user.FullName);
   const [borrowerId, setBorrowerId] = useState('');
   const [clientInfo, setclientInfo] = useState(
@@ -22,25 +22,48 @@ const BorrowModal = ({ user, isOpen, onClose, borrowList, onSubmit, setUpdate })
   useEffect(() => {
     setclientName(clientInfo.FullName)
   },[clientInfo])
-  const handleSubmit = (e) => {
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (clientInfo === null) {
       toast.error("Invalid User");
     } else {
-      const borrower = {
+      const information = {
         inchargeName,
         clientId: clientInfo.UserId,
-        clientName: clientInfo.FullName
+        clientName: clientInfo.FullName,
+        items: borrowList,
       };
-      onSubmit(e, borrower);
-      setInchargeName('');
-      setBorrowerId('');
-      setUpdate();
-      onClose();
+  
+      try {
+        const response = await fetch('/Api/Borrow', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(information),
+        });
+  
+        if (response.ok) {
+          toast.success('Items borrowed successfully.');
+          setBorrowerId('');
+          setUpdate();
+          onClose();
+        }else{
+          throw new Error('Failed to borrow items. Please try again.');
+
+        }
+  
+
+      } catch (error) {
+        console.error('Error submitting transactions:', error);
+        toast.error(error.message || 'An error occurred');
+      }
     }
   };
   
+  console.log(borrowList)
 
   return (
     <div className={`borrow-modal ${isOpen ? 'open' : ''}`} >

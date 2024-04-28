@@ -45,8 +45,7 @@ const Return = ({ isOpen, onClose, selectedItems, update, user , clearSelection 
 
   const handleReceive = async (item) => {
     setCofirmation(false)
-    // const item = returnItem;
-    // console.log("ITEM ", item)
+
     try {
         const requests = item.map(async (returnItem) => {
             const { returnItemCode, condition, inchargeName } = returnItem;

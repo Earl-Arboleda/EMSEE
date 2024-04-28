@@ -45,28 +45,6 @@ const Available = ({ user, setUpdate, update, emcState, Reserve, setReserve}) =>
       setReserveOpen(Reserve);// Why is this useEffect not re rendering even though the dependency is changing value
   }, [Reserve]);
   
-  // const makePutRequest = async (ava) => {
-  //   try {
-  //     const res = await fetch('/Body/Available', {
-  //       method: 'PUT',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(ava),
-  //     });
-
-  //     if (res.ok) {
-  //       return true; 
-  //     } else {
-  //       const errorText = await res.text();
-  //       console.error('Error text:', errorText);
-  //       return false; // Indicate failure
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error.message);
-  //     return false; // Indicate failure
-  //   }
-  // };
 
   useEffect(() => {
     // Group and count items based on ItemName
@@ -196,46 +174,7 @@ const Available = ({ user, setUpdate, update, emcState, Reserve, setReserve}) =>
     
   };
 
-  const handleBorrowSubmit = async (e, formData) => {
-    e.preventDefault();
-    const { clientName ,clientId, inchargeName } = formData;
-    const successfullySubmittedItemCodes = [];
-    try {
-      const requests = [];
-      selectedItems.forEach((Item) => {
-        const transactionData = {
-          itemImage: Item.imageURL,
-          itemCode: Item.itemCode,
-          itemName: Item.itemName,
-          clientId: clientId,
-          clientName: clientName,
-          inchargeName,
-        };
-        requests.push(
-          fetch('/Api/Borrow', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(transactionData),
-          })
-        );
-      });
-      await Promise.all(requests);
-      requests.length = 0;
 
-
-      // Wait for all PUT requests to complete
-      await Promise.all(requests);
-
-      setUpdate();
-      setSelectedItems([]);
-      toast.success('Transactions submitted successfully');
-    } catch (error) {
-      console.error('Error submitting transactions:', error);
-      toast.error('Error submitting transactions:', error.message || 'An error occurred');
-    }
-  };
 
   useEffect(() => {
         fetch('/Api/Available')
@@ -494,7 +433,6 @@ useEffect(() => {
         onClose={() => setBorrowActive(false)}
         borrowList={selectedItems}
         user={user}
-        onSubmit={handleBorrowSubmit}
         setUpdate={(e) => setUpdate(e)}
       />
     </>

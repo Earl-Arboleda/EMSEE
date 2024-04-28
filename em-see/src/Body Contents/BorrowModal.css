@@ -158,9 +158,11 @@
 
   .borrow-ul{
     margin: 0px 20px;
-    padding: 0px;
+    padding: 5px;
     overflow-y: scroll;
     height: 85%;
+    border: 1px solid #cccccc;
+  
   }
   
   .borrow-ul li{

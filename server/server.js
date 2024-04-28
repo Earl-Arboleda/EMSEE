@@ -381,52 +381,48 @@ app.post('/Api/submitReservation', (req, res) => {
 
 
 app.post('/Api/Borrow', async (req, res) => {
-  const { itemCode, itemName, itemImage, clientName, clientId, inchargeName } = req.body;
-  const currentDate = new Date();
-  const borrowDateTime = currentDate.toLocaleString('en-US', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true
-  });
+  const { items, clientName, clientId, inchargeName } = req.body;
+  const currentDate = new Date().toLocaleString();
+  const borrowSql = 'INSERT INTO borrow (itemCode, inchargeName, schoolId, clientName, dateTime, image, itemName) VALUES (?, ?, ?, ?, ?, ?, ?)';
   
-  const insertBorrowQuery = 'INSERT INTO borrow (itemCode, inchargeName, schoolId, clientName, dateTime, image, itemName) VALUES (?, ?, ?, ?, ?, ?, ?)';
-  db.query(insertBorrowQuery, [itemCode, inchargeName, clientId, clientName, borrowDateTime, itemImage, itemName], (err, result) => {
-    if (err) {
-      console.error('Error inserting transaction data:', err);
-      return res.status(500).json({ error: "Error inserting transaction data" });
-    }else{
-      const updateInventoryQuery = 'UPDATE inventory_table SET Availability = "Borrowed" WHERE itemCode = ?';
-      db.query(updateInventoryQuery, itemCode, (err, ret) => {
-        if (err) {
-          console.error('Error updating inventory table:', err);
-          return res.status(500).json({ error: "Error in updating table" });
-        }else{
-          const insertTransactionQuery = 'INSERT INTO transaction_history (itemCode, clientName, clientId, borrowIncharge, borrowDateTime) VALUES (?, ?, ?, ?, ?)';
-          db.query(insertTransactionQuery, [itemCode, clientName, clientId, inchargeName, borrowDateTime], (err, response) => {
+  const promises = items.map((item) => {
+    return new Promise((resolve, reject) => {
+      const itemCode = item.itemCode;
+      const imageURL = item.imageURL;
+      const itemName = item.itemName;
+      db.query(borrowSql,[itemCode, inchargeName, clientId, clientName, currentDate, imageURL, itemName], (err, respo) =>{
+        if(err){
+          reject(err);
+        } else {
+          const updateInventoryQuery = 'UPDATE inventory_table SET Availability = "Borrowed" WHERE itemCode = ?';
+          db.query(updateInventoryQuery, itemCode, (err, ret) => {
             if (err) {
-              console.error('Error inserting transaction history:', err);
-              return res.status(500).json({ error: "Error inserting transaction history" });
+              reject(err);
+            } else {
+              const insertTransactionQuery = 'INSERT INTO transaction_history (itemCode, clientName, clientId, borrowIncharge, borrowDateTime) VALUES (?, ?, ?, ?, ?)';
+              db.query(insertTransactionQuery, [itemCode, clientName, clientId, inchargeName, currentDate], (err, response) => {
+                if (err) {
+                  reject(err);
+                } else {
+                  resolve(respo);
+                }
+              });
             }
-      
-            const deleteReservationQuery = 'DELETE FROM reservations WHERE itemCode = ?';
-            db.query(deleteReservationQuery, itemCode, (err, output) => {
-              if (err) {
-                console.error('Error deleting reservations:', err);
-                return res.status(500).json({ error: "Error in deleting item" });
-              }
-              
-      
-            });
           });
         }
       });
-    }
-
+    });
   });
+
+  Promise.all(promises)
+    .then(() => {
+      res.status(200).json({ success: 'Items borrowed successfully' });
+    })
+    .catch((error) => {
+      res.status(500).json({ error: 'Internal Server Error' });
+    });
 });
+
 
 
 app.post('/Api/Inventory', upload.single('FileImage'), (req, res) => {
