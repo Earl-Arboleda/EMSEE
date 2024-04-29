@@ -99,7 +99,7 @@ const Reserved = ({user, emcState}) => {
           <div className="grouped-reserve">
             {reservedData.length === 0 ? <h3 className="No-reservation">No Reservation Today</h3>:
             reservedData.map((group, groupIndex) => (
-              <div className="group-container" key={groupIndex} onClick={() => openReleaseModal(group)}>
+              <div className="group-container" key={groupIndex} onClick={group.status === 'Completed' || group.status === 'Cancelled' ? null : () => openReleaseModal(group)}>
                 <div>
                 <h3>{group.eventGroup}</h3>
                 <ul>

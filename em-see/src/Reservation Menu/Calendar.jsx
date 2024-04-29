@@ -86,7 +86,7 @@ const Calendar = ({ children, dateSelect, requestCount, exitClicked }) => {
     dateSelect(newSelectedDate.toLocaleDateString());
     setClick(!isClicked);
   };
-
+console.log(countData)
 
   return (
     <div className='custom-calendar'>

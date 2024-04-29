@@ -11,14 +11,15 @@
     font-weight: 600;
     font-size: 14px;
     top: 0;
-    background-color: #fff;
+    background-color: #00cc00;
+    color: #fff;
     z-index: 3;
-    border-bottom: 2px solid #00cc00;
 }
 
 .Reslist div{
     position: relative;
     padding: 10px;
+    border: 1px solid #ccc;
 }
 
  .reslist-body{ 
@@ -27,7 +28,7 @@
 
 }
 .reslist-body:hover{
-    box-shadow: 0px 1px 1px 1px #00cc00;
+    border-bottom: 1px solid #00cc00;
     border-radius: 5px;
 }
 

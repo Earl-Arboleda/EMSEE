@@ -7,6 +7,7 @@ import "../Body Contents/Body.css"
 import ResReqHistory from './ResReqHistory';
 import LOGO from '../Login component/logo.png';
 import Calendar from './Calendar';
+import { toast } from 'react-toastify';
 
 const ReservationRequest = ({user, page}) => {
  const [data, setData] = useState([]);
@@ -162,6 +163,7 @@ console.log(data)
       label7={item.contactNo}
       label8={item.itemType}
       label9={item.itemQuant}
+      user={user.Role}
       onDoubleClick={() => handleRequestClick(item)}
     />
   ))}
@@ -176,7 +178,8 @@ console.log(data)
 };
 const ResList = (props) => {
   return (
-    <div className={`Reslist ${props.className}`} onClick={props.onDoubleClick}>
+    <div className={`Reslist ${props.className}`} onClick={props.user === 'Admin' ? props.onDoubleClick : () => toast.error("You don't have permission")}
+ >
       <div className='long'>{props.label1}</div>
       <div className='long'>{props.label2}</div>
       <div className='long'>{props.label4}</div>

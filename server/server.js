@@ -311,19 +311,49 @@ app.get('/Request-summary/:UserId', (req,res) => {
 
 app.get('/Api/RequestCount', (req, res) => {
   const count = {};
-  db.query('SELECT eventDate FROM reservation_request where status = "Pending"', (err, rows) => {
+  const dated = new Date()
+  const localDate = new Date().toLocaleDateString()
+  const currentDate = dated.toLocaleString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true
+  });
+  // Update status to "Overdue" for events with past eventDate
+  db.query('UPDATE reservation_request SET status = "Overdue",processingDate = ?, incharge = "Automatic" WHERE STR_TO_DATE(eventDate, "%m/%d/%Y, %h:%i %p") < STR_TO_DATE(?, "%m/%d/%Y, %h:%i %p")', [currentDate,currentDate], (err, result) => {
     if (err) {
-      res.status(500).json({ error: 'Internal Server Error' });
-    } else {
+      console.error('Error updating status:', err);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+    console.log('Status updated successfully.');
+
+    // Fetch pending reservation requests after updating status
+    db.query('SELECT eventDate FROM reservation_request WHERE status = "Pending"', (err, rows) => {
+      if (err) {
+        console.error('Error fetching data:', err);
+        return res.status(500).json({ error: 'Internal Server Error' });
+      }
+    
+      const currentDate = new Date(); // Get the current date
       rows.forEach(row => {
         const eventDate = new Date(row.eventDate).toLocaleDateString();
         // Increment count for the eventDate or initialize to 1 if it doesn't exist
         count[eventDate] = (count[eventDate] || 0) + 1;
       });
+   
+    
+      console.log(count);
+    
+      // Respond with the request count
       res.json(count);
-    }
+    });
+    
   });
 });
+
 
 
 app.get('/Api/ReservedCount', (req, res) => {

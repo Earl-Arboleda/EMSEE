@@ -118,7 +118,7 @@ const BorrowModal = ({ user, isOpen, onClose, borrowList, setUpdate }) => {
             </div>
           </div>
           <div className="borrow-button-holder">
-            <button type="submit" className="borrow-button" onClick={handleSubmit} disabled={!clientName}>Submit</button>
+            <button type="submit" className="borrow-button" onClick={{handleSubmit}} disabled={!clientName}>Submit</button>
             </div>
         </div>
       </div>

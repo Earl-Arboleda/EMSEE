@@ -55,7 +55,9 @@
 
 
 .custom-day th {
-  background-color: #f0f0f0;
+  background-color: #00cc00;
+  color: #fff;
+  padding: 10px;
 }
 
 .custom-day td {
